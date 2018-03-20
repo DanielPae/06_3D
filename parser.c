@@ -95,7 +95,7 @@ void parse_file ( char * filename,
     double theta;
     char axis;
     int type;
-    int step = 100;
+    int step = 75;
 
     if ( strncmp(line, "circle", strlen(line)) == 0 ) {
       fgets(line, sizeof(line), f);
@@ -169,7 +169,7 @@ void parse_file ( char * filename,
 	     xvals[0], yvals[0], zvals[0],
 	     xvals[1], yvals[1], zvals[1]) */
       add_sphere(edges, xvals[0], yvals[0], zvals[0],
-		 xvals[1], .05);      
+		 xvals[1], step);      
     }//end sphere
 
     else if ( strncmp(line, "torus", strlen(line)) == 0 ) {
@@ -183,7 +183,7 @@ void parse_file ( char * filename,
 	     xvals[0], yvals[0], zvals[0],
 	     xvals[1], yvals[1], zvals[1]) */
       add_torus(edges, xvals[0], yvals[0], zvals[0],
-	       xvals[1], yvals[1], .05);      
+	       xvals[1], yvals[1], step);      
     }//end torus
 
     else if ( strncmp(line, "clear", strlen(line)) == 0 ) {
